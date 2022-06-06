@@ -14,9 +14,11 @@
     <hr>
 
     <ul>
-    <li>Criação da classe</li>
-    <li>Importação do arquivo de classe</li>
     <li>Criação de objetos</li>
+    <li>Uso do método construtor</li>
+    <li>Uso do <code>$this</code> para acessar as propriedades</li>
+
+
     </ul>
 
 <?php
