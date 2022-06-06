@@ -25,8 +25,8 @@
 require_once "src/Cliente.php";
 
 // criar objetos/instâncias
-$clienteA = new Cliente;
-$clienteB = new Cliente;
+$clienteA = new Cliente ('Tiago','tiago@gmail.com');
+$clienteB = new Cliente('Jon Oliva','savatage@msn.com');
 ?>
 
 <pre><?=var_dump($clienteA, $clienteB)?></pre>

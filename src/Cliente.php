@@ -14,7 +14,7 @@ class Cliente{
         // a referência da classe atualmente manipulada
         $this->nome = $nome;
         $this->email = $email;
-        echo "Construtor chamado!";
+        // echo "Construtor chamado!";
     }
 
 }
