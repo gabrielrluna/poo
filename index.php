@@ -14,20 +14,43 @@
     <hr>
 
     <ul>
-    <li>Criação de objetos</li>
-    <li>Uso do método construtor</li>
-    <li>Uso do <code>$this</code> para acessar as propriedades</li>
-
-
+    <li>Acesso direto à propriedades</li>
+    <li>Atribuição dos dados e leitura</li>
     </ul>
 
 <?php
 require_once "src/Cliente.php";
 
 // criar objetos/instâncias
-$clienteA = new Cliente ('Tiago','tiago@gmail.com');
-$clienteB = new Cliente('Jon Oliva','savatage@msn.com');
+$clienteA = new Cliente;
+$clienteB = new Cliente;
+
+$clienteA -> nome = "Bernardo";
+$clienteA -> email = "bernardo@hotmail.com";
+$clienteA -> telefones = ["11-2345-6789", "21-9876-4532"];
+
+$clienteB -> nome = "Tiago";
+$clienteB -> email = "Tiago@gmail.com";
+$clienteB -> telefones = array("37-6789-2345");
 ?>
+
+<h2>Dados dos Objetos (leitura)</h2>
+<h3><?= $clienteA->nome?></h3>
+<p>Email: <?= $clienteA->email ?></p>
+<p>Telefones: <?= implode(",",$clienteA->telefones )?></p>
+
+<h3><?= $clienteB->nome?></h3>
+<p>Email: <?= $clienteB->email ?></p>
+<p>Telefones: <?= implode(",",$clienteB->telefones ) ?></p>
+
+<h2>Chamando método "exibirDados"</h2>
+<?= $clienteA->exibirDados()?>
+<?= $clienteB->exibirDados()?>
+
+
+
+?>
+
 
 <pre><?=var_dump($clienteA, $clienteB)?></pre>
 
