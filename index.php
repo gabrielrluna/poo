@@ -14,8 +14,9 @@
     <hr>
 
     <ul>
-    <li>Acesso direto à propriedades</li>
-    <li>Atribuição dos dados e leitura</li>
+    <li>Encapsulamento</li>
+    <li>Modificadores de visibilidade</li>
+    <li>Métodos de acesso: Getters e Setters</li>
     </ul>
 
 <?php
@@ -25,23 +26,28 @@ require_once "src/Cliente.php";
 $clienteA = new Cliente;
 $clienteB = new Cliente;
 
-$clienteA -> nome = "Bernardo";
-$clienteA -> email = "bernardo@hotmail.com";
-$clienteA -> telefones = ["11-2345-6789", "21-9876-4532"];
+// Atribuindo dados via setters do objeto 
+$clienteA -> setNome("Tiago");
+$clienteA -> setEmail("tiago@gmail.com");
+$clienteA -> setSenha("12345");
 
-$clienteB -> nome = "Tiago";
-$clienteB -> email = "Tiago@gmail.com";
-$clienteB -> telefones = array("37-6789-2345");
+$clienteB -> setNome("Bernardo");
+$clienteB -> setEmail("bernardo@hotmail.com");
+$clienteB -> setSenha("54321");
+
 ?>
 
-<h2>Dados dos Objetos (leitura)</h2>
-<h3><?= $clienteA->nome?></h3>
-<p>Email: <?= $clienteA->email ?></p>
-<p>Telefones: <?= implode(",",$clienteA->telefones )?></p>
+<h2>Dados dos Objetos (leitura via Getters)</h2>
+<h3><?= $clienteA->getNome()?></h3>
+<p>Email: <?= $clienteA->getEmail() ?></p>
+<p>Senha: <?= $clienteA->getSenha() ?></p>
 
-<h3><?= $clienteB->nome?></h3>
-<p>Email: <?= $clienteB->email ?></p>
-<p>Telefones: <?= implode(",",$clienteB->telefones ) ?></p>
+
+<h3><?= $clienteB->getNome()?></h3>
+<p>Email: <?= $clienteB->getEmail() ?></p>
+<p>Senha: <?= $clienteB->getSenha() ?></p>
+
+
 
 <h2>Chamando método "exibirDados"</h2>
 <?= $clienteA->exibirDados()?>

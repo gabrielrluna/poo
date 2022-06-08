@@ -2,29 +2,37 @@
 
 class Cliente{
     //Propriedades (ou atributos)
-    public string $nome;
-    public string $email;
-    public string $senha;
-    public array $telefones;
+    private string $nome;
+    private string $email;
+    private string $senha = ""; //valor inicial padrão
+    // public array $telefones;
 
-    // Método Construtor
-    // public function __construct(string $nome, string $email)
-    // {
-    //     // $this é uma variavel especial, sempre apontando para 
-    //     // a referência da classe atualmente manipulada
-    //     $this->nome = $nome;
-    //     $this->email = $email;
-    //     // echo "Construtor chamado!";
-    // }
+    // Métodos getter e setter 
+    public function getNome():string{
+        return $this->nome;
+    }
+    public function getEmail():string{
+        return $this->email;
+    }
+    public function getSenha():string{
+        return $this->senha;
+    }
+    
+    public function setNome(string $nome){
+        $this -> nome = $nome;
+    }
+    public function setEmail(string $email){
+        $this -> email = $email;
+    }
+    public function setSenha(string $senha){
+        $senhaSegura = password_hash($senha, PASSWORD_DEFAULT); 
+        $this -> senha = $senhaSegura;
 
-        public function exibirDados(){
-            echo "<h3> $this -> nome</h3>";
-            echo  "<ul>";
-            echo "<li>$this->email </li>";
-            echo "<li>". implode(',',$this->telefones) ."</li>";
-            echo  "</ul>";
-        }
+        // ou
+        // $this -> senha = password_hash($senha,PASSWORD_DEFAULT)
 
+    }
+  
 }
 
 
